@@ -14,11 +14,14 @@ export function Hero() {
     // Title staggered animation
     const words = titleRef.current.innerText.split(" ");
     titleRef.current.innerHTML = "";
-    words.forEach((word) => {
+    words.forEach((word, i) => {
       const span = document.createElement("span");
-      span.innerText = word + " ";
+      span.innerText = word;
       span.className = "inline-block opacity-0 translate-y-8";
       titleRef.current?.appendChild(span);
+      if (i < words.length - 1) {
+        titleRef.current?.appendChild(document.createTextNode(" "));
+      }
     });
 
     const tl = gsap.timeline({ delay: 1.5 }); // Match preloader duration
