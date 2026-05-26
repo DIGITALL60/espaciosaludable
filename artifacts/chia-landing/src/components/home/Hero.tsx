@@ -11,29 +11,14 @@ export function Hero() {
   useGSAP(() => {
     if (!containerRef.current || !titleRef.current) return;
 
-    // Title staggered animation
-    const words = titleRef.current.innerText.split(" ");
-    titleRef.current.innerHTML = "";
-    words.forEach((word, i) => {
-      const span = document.createElement("span");
-      span.innerText = word;
-      span.className = "inline-block opacity-0 translate-y-8";
-      titleRef.current?.appendChild(span);
-      if (i < words.length - 1) {
-        titleRef.current?.appendChild(document.createTextNode(" "));
-      }
-    });
+    const tl = gsap.timeline({ delay: 1.5 });
 
-    const tl = gsap.timeline({ delay: 1.5 }); // Match preloader duration
-
-    tl.to(titleRef.current.children, {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-      stagger: 0.06,
-      ease: "power3.out",
-    })
-    .fromTo(".hero-element", 
+    tl.fromTo(
+      titleRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
+    )
+    .fromTo(".hero-element",
       { opacity: 0, y: 16 },
       { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" },
       "-=0.2"
