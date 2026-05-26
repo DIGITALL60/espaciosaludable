@@ -19,14 +19,14 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
     tl.to(".preloader-logo", {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 0.5,
       ease: "power3.out"
     })
     .to(".preloader-bg", {
       yPercent: -100,
-      duration: 1,
+      duration: 0.7,
       ease: "power4.inOut",
-      delay: 0.5
+      delay: 0.2
     });
 
     return () => {

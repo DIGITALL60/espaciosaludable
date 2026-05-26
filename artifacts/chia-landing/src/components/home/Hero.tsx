@@ -21,19 +21,19 @@ export function Hero() {
       titleRef.current?.appendChild(span);
     });
 
-    const tl = gsap.timeline({ delay: 2.5 }); // Wait for preloader
+    const tl = gsap.timeline({ delay: 1.5 }); // Match preloader duration
 
     tl.to(titleRef.current.children, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
-      stagger: 0.1,
+      duration: 0.5,
+      stagger: 0.06,
       ease: "power3.out",
     })
     .fromTo(".hero-element", 
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" },
-      "-=0.4"
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" },
+      "-=0.2"
     );
 
   }, { scope: containerRef });
