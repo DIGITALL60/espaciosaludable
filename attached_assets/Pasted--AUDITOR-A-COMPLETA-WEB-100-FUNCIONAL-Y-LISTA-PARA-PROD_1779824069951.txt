@@ -1,0 +1,1605 @@
+🔍 AUDITORÍA COMPLETA - WEB 100% FUNCIONAL Y LISTA PARA PRODUCCIÓN
+
+**Versión**: 1.0  
+**Objetivo**: Asegurar que cada botón, enlace, formulario, imagen y texto funcione perfectamente  
+**Duración estimada**: 4-6 horas de testing exhaustivo  
+**Resultado final**: Web pronta para lanzamiento comercial
+
+---
+
+## 📋 TABLA DE CONTENIDOS
+
+1. [Auditoría Visual & Diseño](#auditoría-visual--diseño)
+2. [Auditoría de Funcionalidad](#auditoría-de-funcionalidad)
+3. [Auditoría de Contenido & Ortografía](#auditoría-de-contenido--ortografía)
+4. [Auditoría de Imágenes](#auditoría-de-imágenes)
+5. [Auditoría de Rendimiento](#auditoría-de-rendimiento)
+6. [Auditoría de Accesibilidad](#auditoría-de-accesibilidad)
+7. [Auditoría de Formularios](#auditoría-de-formularios)
+8. [Auditoría de Responsividad](#auditoría-de-responsividad)
+9. [Auditoría de Seguridad](#auditoría-de-seguridad)
+10. [Checklist Final](#checklist-final)
+
+---
+
+## 🎨 AUDITORÍA VISUAL & DISEÑO
+
+### A. TIPOGRAFÍA
+- [ ] **Revisar todas las fuentes**
+  - Verificar que las familias de fuentes sean consistentes
+  - Comprobar que los tamaños sean legibles (min 14px en mobile)
+  - Revisar contraste de colores (mínimo WCAG AA: 4.5:1 para texto)
+  - Verificar que títulos tengan jerarquía clara (H1 > H2 > H3 > etc)
+
+- [ ] **Espaciado de líneas**
+  - Line-height mínimo 1.5 en textos largos
+  - Párrafos con separación clara
+  - Listas con indentación visible
+
+- [ ] **Estilos de texto**
+  - ¿Hay texto en MAYÚSCULAS innecesarias? → Cambiar a normal
+  - ¿Hay palabras juntas sin espacios? → Buscar y corregir
+  - ¿Existen textos truncados (...)? → Revisar y expandir
+
+### B. COLORES & CONTRASTE
+- [ ] Revisar paleta de colores en toda la web
+- [ ] Usar https://webaim.org/resources/contrastchecker/
+- [ ] Verificar que botones sean distinguibles
+- [ ] Revisar que enlaces sean identificables (subrayados o color distinto)
+
+### C. ESPACIADO & ALINEACIÓN
+- [ ] Márgenes consistentes entre secciones
+- [ ] Padding uniforme en contenedores
+- [ ] Alineación de elementos (izquierda, centro, derecha)
+- [ ] Sin elementos desalineados o "flotando"
+
+### D. ELEMENTOS VISUALES
+- [ ] Iconos: todos visibles, correctamente escalados
+- [ ] Badges (NUEVO, SIN SELLOS): colores claros y diferenciados
+- [ ] Bordes y sombras: consistentes y sutiles
+- [ ] Animaciones: fluidas, no lentas, no molestas
+
+---
+
+## 🔘 AUDITORÍA DE FUNCIONALIDAD
+
+### A. NAVEGACIÓN PRINCIPAL
+- [ ] **Header/Navbar**
+  - Logo clickeable → va a Home
+  - Menú desplegable en mobile funciona
+  - Enlace activo resaltado (indica página actual)
+  - Carrito muestra número de items
+  - Cuenta/Usuario accesible
+  - Buscar funciona correctamente
+
+- [ ] **Breadcrumbs**
+  - Presentes donde corresponde (Productos, Detalle, etc)
+  - Cada nivel es clickeable y funciona
+  - Separadores visibles
+
+- [ ] **Footer**
+  - Todos los enlaces funcionan
+  - Información de contacto correcta
+  - Links a redes sociales funcionan en pestaña nueva
+  - Copyright con año actual
+
+### B. HOME PAGE
+- [ ] **Preloader GSAP**
+  - Aparece al cargar
+  - Desaparece sin quedarse atrapado
+  - No bloquea la interacción después
+
+- [ ] **Hero section**
+  - Imagen de fondo se ve correctamente
+  - Texto legible sobre imagen
+  - CTA (botones) funcionan
+  - Animaciones suaves
+
+- [ ] **Category Grid**
+  - Todas las categorías visibles
+  - Hoverstate diferenciado
+  - Clickeable → lleva a filtro correcto en Tienda
+
+- [ ] **Stats section**
+  - Números aparecen correctamente
+  - Texto alineado
+  - Iconos presentes
+
+- [ ] **Testimonios**
+  - Carrusel funciona (next/prev)
+  - Autoplay (si está configurado)
+  - Estrellas de rating visibles
+  - Datos del cliente claros
+
+- [ ] **"Más Vendidos" section**
+  - Muestra productos correctamente
+  - Botones "Agregar al carrito" funcionan
+  - Botones "Wishlist" funcionan
+  - Precios correctos
+  - Imágenes cargan sin errores
+
+### C. TIENDA (PRODUCTOS)
+- [ ] **Sidebar de filtros**
+  - Filtro por categoría funciona
+  - Filtro por precio funciona (rango correcto)
+  - Filtro por dieta funciona
+  - Se pueden aplicar múltiples filtros simultáneamente
+  - Botón "Limpiar filtros" funciona
+
+- [ ] **Search / Búsqueda**
+  - Buscar por nombre funciona
+  - Buscar por descripción funciona
+  - Resultados actualizan en tiempo real
+  - Mensaje "Sin resultados" si no hay coincidencias
+
+- [ ] **Ordenamiento**
+  - Precio ascendente/descendente
+  - Popularidad
+  - Más nuevo
+  - A-Z y Z-A
+  - Selector muestra opción activa
+
+- [ ] **Grid de productos**
+  - Tarjetas alineadas correctamente
+  - Imágenes proporcionadas y sin distorsión
+  - Precio visible y correcto
+  - Badges (NUEVO/SIN SELLOS) presentes si aplican
+  - Puntos de stock (1-3 colores) correctos
+  - Rating/estrellas visibles
+
+- [ ] **Botones en productos**
+  - "Ver detalle" → abre página de producto
+  - "Agregar al carrito" → agrega y muestra confirmación
+  - "Wishlist" → agrega a favoritos y cambia ícono
+
+### D. PÁGINA DE PRODUCTO DETALLE
+- [ ] **Galería de imágenes**
+  - Primera imagen se carga al abrir
+  - Miniaturasclickeables
+  - Click en miniatura cambia imagen principal
+  - Zoom funciona (si está implementado)
+  - Navegación por flechas funciona
+
+- [ ] **Información del producto**
+  - Nombre del producto
+  - Precio y precio original (si hay descuento)
+  - Rating/estrellas
+  - Descripción completa sin truncar
+  - Ingredientes o especificaciones si aplican
+
+- [ ] **Selector de cantidad**
+  - Botones - / + funcionan
+  - Campo de entrada funciona
+  - No permite 0 o números negativos
+  - Max respeta el stock disponible
+
+- [ ] **Indicador de stock**
+  - Barra de stock visual
+  - Texto "En stock" / "Bajo stock" / "Agotado"
+  - Color cambiaresponde a disponibilidad
+
+- [ ] **Botones de acción**
+  - "Agregar al carrito" funciona
+  - "Agregar a favoritos" funciona
+  - "Comparar" funciona (si está implementado)
+  - Confirmación visual después de agregar
+
+- [ ] **Sección de reviews**
+  - Reviews se muestran correctamente
+  - Formato consistente
+  - Puntuaciones visibles
+  - Autor y fecha presentes
+
+- [ ] **Productos relacionados**
+  - Se muestran al pie
+  - Correctamente filtrados
+  - Clickeables
+
+### E. CARRITO DE COMPRAS
+- [ ] **Vista del carrito**
+  - Todos los items se muestran
+  - Imágenes correctas
+  - Precios correctos
+  - Cantidad seleccionada visible
+
+- [ ] **Modificación de cantidad**
+  - Botones +/- funcionan
+  - Campo editable funciona
+  - Total se recalcula automáticamente
+  - No permite 0 o negativos
+
+- [ ] **Eliminar items**
+  - Botón eliminar funciona
+  - Confirmación (opcional pero recomendado)
+  - Total se recalcula
+
+- [ ] **Resumen de pedido**
+  - Subtotal correcto
+  - Impuestos calculados correctamente
+  - Envío (si aplica)
+  - TOTAL final correcto
+  - Desgloseado y claro
+
+- [ ] **Código de cupón**
+  - Campo visible y funcional
+  - Botón "Aplicar" funciona
+  - Valida cupones correctamente
+  - Muestra descuento aplicado
+  - Mensaje de error si cupón inválido
+
+- [ ] **Botones de acción**
+  - "Continuar comprando" → vuelve a tienda
+  - "Ir al checkout" → inicia proceso de compra
+
+- [ ] **Carrito vacío**
+  - Mensaje claro
+  - Botón para volver a tienda
+
+### F. CHECKOUT
+- [ ] **PASO 1: ENVÍO**
+  - Campos de envío completos:
+    - Nombre
+    - Apellido
+    - Email
+    - Teléfono
+    - Dirección
+    - Ciudad
+    - Código postal
+    - País
+  - Validación en tiempo real
+  - Botón "Continuar" funciona
+
+- [ ] **PASO 2: MÉTODO DE ENVÍO**
+  - Opciones de envío se muestran
+  - Precios correctos
+  - Se puede seleccionar una opción
+  - Botón "Continuar" funciona
+  - Botón "Volver" funciona
+
+- [ ] **PASO 3: PAGO**
+  - Resumen del pedido visible
+  - Datos de envío visibles
+  - Total final visible
+  - Método de pago seleccionable
+  - Integración de pasarela (Stripe/PayPal/etc)
+  - Botón "Completar compra" funciona
+  - Mensaje de éxito después de pagar
+
+- [ ] **Validación en toda la compra**
+  - No permite avanzar sin rellenar campos obligatorios
+  - Mensajes de error claros
+  - Campos inválidos resaltados
+
+### G. MI CUENTA
+- [ ] **LOGIN**
+  - Campo email
+  - Campo contraseña
+  - Botón "Entrar"
+  - Link "¿Olvidaste la contraseña?"
+  - Validación de credenciales
+  - Mensaje de error si falla
+
+- [ ] **REGISTRO**
+  - Campo nombre
+  - Campo email
+  - Campo contraseña
+  - Campo repetir contraseña
+  - Validación de contraseña (longitud mínima, etc)
+  - Link "¿Ya tienes cuenta?"
+  - Funciona correctamente
+
+- [ ] **DASHBOARD AUTENTICADO**
+  - Datos del usuario visibles
+  - Mis pedidos se muestran
+  - Historial de compras
+  - Botón para ver detalle de cada compra
+  - Tracking de envíos
+  - Notificaciones de pedidos
+  - Botón "Editar perfil" funciona
+  - Botón "Cambiar contraseña" funciona
+  - Botón "Cerrar sesión" funciona
+
+- [ ] **MIS ÓRDENES**
+  - Lista de órdenes con:
+    - Número de orden
+    - Fecha
+    - Total
+    - Estado (pendiente, enviado, entregado)
+  - Clickeable para ver detalles
+  - Botón de reorden (si aplica)
+
+### H. FAVORITOS / WISHLIST
+- [ ] **Página de favoritos**
+  - Muestra todos los items guardados
+  - Formato consistente con tienda
+  - Botón "Agregar al carrito"
+  - Botón "Eliminar de favoritos"
+  - Mensaje si lista está vacía
+  - Link a tienda si está vacío
+
+### I. RECETAS
+- [ ] **Página principal de recetas**
+  - Todas las recetas se muestran
+  - Filtro por categoría funciona
+  - Filtro por dificultad funciona
+  - Grid bien alineado
+  - Imágenes correctas
+
+- [ ] **Detalle de receta**
+  - Imagen de receta
+  - Nombre/título
+  - Descripción
+  - Ingredientes listados claramente
+  - Pasos numerados
+  - Dificultad y categoría visibles
+  - Tiempo de preparación (si aplica)
+  - Botón "Volver" funciona
+
+- [ ] **Recetas relacionadas**
+  - Se muestran al pie
+  - Correctamente filtradas
+
+### J. BLOG
+- [ ] **Página principal de blog**
+  - Todos los posts se muestran
+  - Imagen destacada presente
+  - Título legible
+  - Extracto/preview
+  - Fecha de publicación
+  - Categoría visible
+  - Filtro por categoría funciona
+  - Grid bien distribuido
+
+- [ ] **Página de post individual**
+  - Título principal
+  - Imagen destacada grande
+  - Autor y fecha
+  - Contenido completo sin truncar
+  - Párrafos bien espaciados
+  - Listas (si aplican) formateadas
+  - Links internos funcionan
+  - Botón "Volver al blog" funciona
+
+- [ ] **Posts relacionados**
+  - Se muestran al final
+  - Correctamente filtrados
+
+### K. PÁGINA NOSOTROS
+- [ ] **Hero section**
+  - Imagen/background correcto
+  - Texto legible
+  - Animaciones suaves
+
+- [ ] **Contenido de marca**
+  - Historia clara y bien estructurada
+  - Misión visible
+  - Valores listados
+  - Equipo (si aplica) con fotos y nombres
+  - Imagen de oficina/equipo de buena calidad
+
+---
+
+## 📝 AUDITORÍA DE CONTENIDO & ORTOGRAFÍA
+
+### A. REVISIÓN MINUCIOSA DE TEXTO
+
+**Herramientas a usar:**
+- Ctrl+F en cada página
+- https://www.grammarly.com/ (copiar texto)
+- Lector de pantalla (revisar que lee bien)
+
+#### HOME PAGE
+- [ ] Revisar cada párrafo
+- [ ] Revisar títulos de secciones
+- [ ] Revisar botones CTA
+- [ ] ¿Hay palabras juntas sin espacios?
+  - Buscar: `aaabbb` (palabraspegadas)
+  - Reemplazar: agregar espacios `aaa bbb`
+  
+#### TIENDA
+- [ ] Descripción de cada producto
+- [ ] Nombres de categorías
+- [ ] Filtros etiquetados correctamente
+- [ ] Mensajes de error/validación claros
+- [ ] Botones etiquetados correctamente
+
+#### PRODUCTO DETALLE
+- [ ] Nombre del producto sin errores
+- [ ] Descripción sin typos
+- [ ] Ingredientes (si aplican) bien listados
+- [ ] Reviews sin errores
+- [ ] Especificaciones claras
+
+#### CHECKOUT
+- [ ] Labels de formulario claros
+- [ ] Placeholders apropiados
+- [ ] Mensajes de validación sin errores
+- [ ] Confirmación de compra clara
+- [ ] Email de confirmación tiene texto correcto
+
+#### RECETAS
+- [ ] Nombres de recetas
+- [ ] Ingredientes numerados/listados
+- [ ] Pasos numerados y claros
+- [ ] Instrucciones sin ambigüedades
+- [ ] Tiempo y dificultad correctos
+
+#### BLOG
+- [ ] Títulos de posts
+- [ ] Contenido de posts sin errores
+- [ ] Extractos coherentes
+- [ ] Categorías bien nombradas
+
+#### NOSOTROS
+- [ ] Historia de marca completa
+- [ ] Misión y visión claras
+- [ ] Valores bien descritos
+- [ ] Nombres de equipo correctos
+- [ ] Información de contacto correcta
+
+### B. BÚSQUEDA DE ERRORES COMUNES
+
+```
+BUSCAR EN TODA LA WEB (Ctrl+F):
+
+❌ "  " (doble espacio) → cambiar por un espacio
+❌ "  " (espacios extras) → limpiar
+❌ Palabras EN MAYÚS innecesarias → cambiar a normal
+❌ "..." (puntos suspensivos incompletos)
+❌ Caracteres raros o especiales malformateados
+❌ URLs rotas (href="#" o links inválidos)
+❌ "lorem ipsum" u otro texto placeholder
+❌ "[TODO]" o comentarios de código
+❌ Números sin formato (19999 → 19.999 o $19.999)
+❌ Teléfonos sin formato
+❌ Emails sin @ o mal escritos
+```
+
+### C. CONTROL DE MAYÚSCULAS/MINÚSCULAS
+
+- [ ] Títulos: Primera letra mayúscula (Title Case)
+- [ ] Categorías: Consistentes
+- [ ] Botones: Wording consistente ("Agregar", "Comprar", etc)
+- [ ] Etiquetas: Uniformes
+
+---
+
+## 🖼️ AUDITORÍA DE IMÁGENES
+
+### A. SISTEMA DE CARGA DE IMÁGENES (ADMIN)
+
+- [ ] **Upload desde galería/archivos**
+  - Botón "Seleccionar imagen" funciona
+  - Se abre diálogo de archivo
+  - Se pueden seleccionar: JPG, PNG, WebP, GIF
+  - Tamaño máximo controlado (ej: 5MB)
+  - Mensaje de error si archivo muy grande
+  - Vista previa antes de guardar
+
+- [ ] **Opciones de imagen**
+  - Botón "Cortar/Redimensionar" (opcional)
+  - Botón "Eliminar imagen"
+  - Botón "Cambiar imagen"
+
+- [ ] **Almacenamiento**
+  - Imágenes se guardan en servidor/CDN
+  - URL correcta en base de datos
+  - No se repiten descargas
+
+### B. OPTIMIZACIÓN DE IMÁGENES EN FRONTEND
+
+- [ ] **Todas las imágenes tienen alt text**
+  ```html
+  <img src="producto.jpg" alt="Semillas de Chía Orgánicas">
+  ```
+
+- [ ] **Imágenes optimizadas**
+  - Formato WebP cuando es posible
+  - Lazy loading en imágenes debajo del fold
+  - Tamaño comprimido (máx 200KB para productos)
+
+- [ ] **Responsive images**
+  - Se adaptan a mobile
+  - Se adaptan a desktop
+  - Sin distorsión en ningún tamaño
+  - Aspect ratio consistente
+
+### C. REVISIÓN VISUAL DE IMÁGENES
+
+#### Home Page
+- [ ] Hero background: calidad, sin pixelado
+- [ ] Category icons: visibles, consistentes
+- [ ] Stats icons: claros
+- [ ] Testimonios: fotos claras
+- [ ] "Más vendidos": productos se ven bien
+
+#### Tienda
+- [ ] Todas las miniaturas de productos visibles
+- [ ] Sin imágenes rotas (broken image icon)
+- [ ] Proporciones consistentes
+- [ ] Hover effect funciona en imágenes
+
+#### Producto Detalle
+- [ ] Galería de imágenes funciona
+- [ ] Primera imagen es la más representativa
+- [ ] Zoom funciona sin pixelado
+- [ ] Miniaturasclickeables
+
+#### Carrito
+- [ ] Imágenes pequeñas de productos visibles
+- [ ] Proporciones correctas en vista reducida
+
+#### Checkout
+- [ ] Resumen con imágenes de productos
+- [ ] Visibles pero pequeñas
+
+#### Recetas
+- [ ] Imagen de cada receta en lista
+- [ ] Imagen grande en detalle
+- [ ] Proporciones consistentes
+- [ ] Alimentos se ven apetitosos
+
+#### Blog
+- [ ] Imagen destacada en lista
+- [ ] Imagen grande en post
+- [ ] Calidad adecuada
+
+#### Nosotros
+- [ ] Foto de equipo/oficina
+- [ ] Fotos de equipo individual (si aplica)
+- [ ] Calidad profesional
+- [ ] Consistencia en tamaño
+
+### D. ERRORES COMUNES EN IMÁGENES
+
+- [ ] ¿Hay imágenes rotas? (ícono de imagen rota visible)
+- [ ] ¿Hay imágenes pixeladas/borrosas?
+- [ ] ¿Hay imágenes distorsionadas?
+- [ ] ¿Las imágenes cargan lentamente?
+- [ ] ¿Hay bordes blancos/negros incómodos?
+- [ ] ¿Las imágenes muestran correctamente en mobile?
+
+---
+
+## ⚡ AUDITORÍA DE RENDIMIENTO
+
+### A. VELOCIDAD DE CARGA
+
+- [ ] Usar https://pagespeed.web.dev/
+- [ ] Score móvil: mínimo 70
+- [ ] Score desktop: mínimo 80
+- [ ] Tiempo de carga: < 3 segundos
+
+### B. OPTIMIZACIONES
+
+- [ ] Imágenes comprimidas
+- [ ] CSS minificado
+- [ ] JavaScript minificado y bundled
+- [ ] Fuentes optimizadas (max 2-3 familias)
+- [ ] Sin CSS/JS no utilizados
+- [ ] Cache configurado correctamente
+
+### C. RECURSOS CRÍTICOS
+
+- [ ] Iconos: usar SVG en lugar de PNG
+- [ ] Fuentes web: máximo 2-3 (Google Fonts recomendado)
+- [ ] Sin scripts bloqueadores
+- [ ] GSAP cargado de CDN o bundleado
+
+---
+
+## ♿ AUDITORÍA DE ACCESIBILIDAD
+
+### A. NAVEGACIÓN POR TECLADO
+
+- [ ] Todos los botones accesibles con Tab
+- [ ] Orden lógico de tabulación
+- [ ] Modal/popups: focus trapeado correctamente
+- [ ] Tecla Enter funciona en botones
+- [ ] Tecla Escape cierra modales
+
+### B. LECTOR DE PANTALLA
+
+- [ ] Títulos de página claros (H1 único por página)
+- [ ] Estructura de encabezados lógica (H1 → H2 → H3)
+- [ ] Imágenes tienen alt text descriptivo
+- [ ] Links tienen texto visible (no "click aquí")
+- [ ] Botones tienen aria-label si necesario
+- [ ] Tablas tienen headers (<th>)
+
+### C. CONTRASTE DE COLORES
+
+- [ ] Ratio de contraste mínimo 4.5:1 para texto
+- [ ] Botones distinguibles
+- [ ] Enlaces diferenciados de texto normal
+
+### D. ZOOM Y ESCALADO
+
+- [ ] Página funciona con zoom hasta 200%
+- [ ] Texto no se corta
+- [ ] Elementos se reorganizan bien
+
+---
+
+## 📋 AUDITORÍA DE FORMULARIOS
+
+### A. CAMPOS DE FORMULARIO
+
+- [ ] Todos tienen labels visibles
+- [ ] Placeholders claros
+- [ ] Error messages descriptivos
+- [ ] Success messages claros
+- [ ] Required fields indicados (*)
+
+### B. VALIDACIÓN
+
+- [ ] Email: valida formato correcto
+- [ ] Teléfono: valida formato
+- [ ] Contraseña: cumple requisitos mínimos
+- [ ] Campos obligatorios: no permiten vacíos
+- [ ] Mensajes de error en tiempo real o al enviar
+
+### C. FORMULARIOS EN LA WEB
+
+#### Newsletter
+- [ ] Campo email visible
+- [ ] Botón "Suscribirse" funciona
+- [ ] Mensaje de éxito
+- [ ] Mensaje de error si email inválido
+- [ ] No se duplican suscripciones
+
+#### Contacto (si aplica)
+- [ ] Nombre, email, mensaje
+- [ ] Validación completa
+- [ ] Se envía correctamente
+- [ ] Confirmación al usuario
+- [ ] Email de confirmación al admin
+
+#### Búsqueda
+- [ ] Se puede escribir
+- [ ] Busca mientras escribes o con Enter
+- [ ] Resultados actualizan
+- [ ] Mensaje "Sin resultados" si aplica
+
+#### Login/Registro
+- [ ] Todos los campos funcionan
+- [ ] Validación correcta
+- [ ] Mensajes de error claros
+- [ ] Funciona correctamente
+
+---
+
+## 📱 AUDITORÍA DE RESPONSIVIDAD
+
+### A. PUNTOS DE QUIEBRE
+
+Probar en estos tamaños:
+- [ ] 320px (iPhone SE)
+- [ ] 375px (iPhone estándar)
+- [ ] 480px (Android)
+- [ ] 768px (iPad)
+- [ ] 1024px (iPad Pro)
+- [ ] 1440px (Desktop)
+- [ ] 1920px (Desktop grande)
+
+### B. MÓVIL (320-480px)
+
+- [ ] Menú funciona (hamburguesa visible)
+- [ ] Texto legible sin zoom
+- [ ] Botones clickeables (min 44x44px)
+- [ ] Imágenes no se distorsionan
+- [ ] Grid de productos: 1-2 columnas máximo
+- [ ] Carrito accesible
+- [ ] Formularios ocupan ancho completo
+- [ ] Sin scroll horizontal
+
+### C. TABLET (768-1024px)
+
+- [ ] Layout se ajusta
+- [ ] Grid de productos: 2-3 columnas
+- [ ] Sidebar de filtros visible o colapsible
+- [ ] Imágenes bien proporcionadas
+- [ ] Espaciado apropiado
+
+### D. DESKTOP (1440px+)
+
+- [ ] Layout óptimo
+- [ ] Grid de productos: 4+ columnas
+- [ ] Sidebar visible
+- [ ] Whitespace apropiado
+- [ ] Sin líneas muy largas (máx 80 caracteres)
+
+---
+
+## 🔐 AUDITORÍA DE SEGURIDAD
+
+### A. FORMULARIOS & DATOS
+
+- [ ] No se guarda información sensible en localStorage sin encriptar
+- [ ] Contraseñas no se muestran en texto plano
+- [ ] HTTPS habilitado en producción
+- [ ] No hay credenciales en el código (usar variables de entorno)
+
+### B. VALIDACIÓN
+
+- [ ] Validación en frontend Y backend
+- [ ] SQL Injection: no vulnerable
+- [ ] XSS: no hay inyección de scripts
+- [ ] CSRF: tokens si es necesario
+
+### C. API / BACKEND
+
+- [ ] Endpoints protegidos con autenticación
+- [ ] Rate limiting en formularios
+- [ ] Logs de actividad si es necesario
+
+---
+
+## 🔍 CHECKLIST FINAL - 100% FUNCIONAL
+
+### NAVEGACIÓN
+- [ ] Logo clickea a Home
+- [ ] Todos los links del header funcionan
+- [ ] Menu mobile funciona
+- [ ] Breadcrumbs presentes y funcionales
+- [ ] Footer completo y funcional
+
+### PÁGINAS PRINCIPALES
+- [ ] Home: todas las secciones funcionales
+- [ ] Tienda: filtros, búsqueda, ordenamiento
+- [ ] Producto detalle: galería, cantidad, compra
+- [ ] Carrito: modificación, cupones, checkout
+- [ ] Checkout: 3 pasos funcionando
+- [ ] Mi cuenta: login/registro/dashboard
+- [ ] Favoritos: agregar/eliminar funciona
+- [ ] Recetas: filtros, detalle funciona
+- [ ] Blog: posts, filtros, detalle funciona
+- [ ] Nosotros: contenido completo
+
+### IMÁGENES
+- [ ] Todas las imágenes cargan correctamente
+- [ ] Admin puede subir/cambiar/eliminar imágenes
+- [ ] Imágenes optimizadas
+- [ ] Alt text en todas las imágenes
+- [ ] Sin imágenes rotas
+
+### TEXTO & CONTENIDO
+- [ ] Sin errores ortográficos
+- [ ] Sin palabras juntas
+- [ ] Tipografía consistente
+- [ ] Mayúsculas/minúsculas correcto
+- [ ] Números formateados correctamente
+- [ ] Puntuación correcta
+
+### FUNCIONALIDAD
+- [ ] Agregar al carrito funciona
+- [ ] Wishlist funciona
+- [ ] Cupones aplicados correctamente
+- [ ] Checkout completa
+- [ ] Búsqueda funciona
+- [ ] Filtros funcionan
+- [ ] Ordenamiento funciona
+
+### RESPONSIVIDAD
+- [ ] Mobile: 320px - 480px
+- [ ] Tablet: 768px - 1024px
+- [ ] Desktop: 1440px +
+- [ ] Sin scroll horizontal
+- [ ] Botones clickeables en todos los tamaños
+
+### ACCESIBILIDAD
+- [ ] Teclado funciona
+- [ ] Lector de pantalla funciona
+- [ ] Contraste suficiente
+- [ ] Zoom funciona
+
+### RENDIMIENTO
+- [ ] PageSpeed: móvil >70, desktop >80
+- [ ] Tiempo de carga < 3s
+- [ ] Imágenes optimizadas
+- [ ] Sin recursos no utilizados
+
+### FORMULARIOS
+- [ ] Validación correcta
+- [ ] Mensajes de error claros
+- [ ] Mensajes de éxito claros
+- [ ] Newsletter (si aplica)
+- [ ] Contacto (si aplica)
+
+### SEGURIDAD
+- [ ] HTTPS en producción
+- [ ] Sin credenciales expuestas
+- [ ] Validación en backend
+- [ ] Datos sensibles protegidos
+
+---
+
+## 📊 MATRIZ DE PRUEBAS
+
+Crear una tabla como esta y marcar ✅ cada elemento:
+
+```
+┌─────────────────────────────┬────────┬─────────┬──────────┐
+│ Elemento                    │ Móvil  │ Tablet  │ Desktop  │
+├─────────────────────────────┼────────┼─────────┼──────────┤
+│ Home - Hero                 │   ✅   │   ✅    │    ✅    │
+│ Home - Productos            │   ✅   │   ✅    │    ✅    │
+│ Tienda - Filtros            │   ✅   │   ✅    │    ✅    │
+│ Tienda - Búsqueda           │   ✅   │   ✅    │    ✅    │
+│ Producto - Galería          │   ✅   │   ✅    │    ✅    │
+│ Carrito                     │   ✅   │   ✅    │    ✅    │
+│ Checkout                    │   ✅   │   ✅    │    ✅    │
+│ Mi Cuenta                   │   ✅   │   ✅    │    ✅    │
+│ Recetas                     │   ✅   │   ✅    │    ✅    │
+│ Blog                        │   ✅   │   ✅    │    ✅    │
+│ Nosotros                    │   ✅   │   ✅    │    ✅    │
+└─────────────────────────────┴────────┴─────────┴──────────┘
+```
+
+---
+
+## 🎯 RESULTADO FINAL
+
+Cuando completes esta auditoría:
+
+✅ **100% funcional**
+✅ **Sin errores de contenido**
+✅ **Imágenes optimizadas**
+✅ **Responsiva en todos los dispositivos**
+✅ **Accesible**
+✅ **Rápida**
+✅ **Segura**
+✅ **Lista para producción**
+
+---
+
+## 📝 REGISTRO DE CAMBIOS
+
+Mantén un log de cada corrección:
+
+```
+AUDITORÍA - LOG DE CORRECCIONES
+═══════════════════════════════════════════
+
+Fecha: 2024-05-26
+
+❌ ENCONTRADO: "Semillasde chía" (palabras juntas)
+✅ CORREGIDO: "Semillas de chía"
+
+❌ ENCONTRADO: Imagen de producto no carga en mobile
+✅ CORREGIDO: Optimizada y testeada
+
+❌ ENCONTRADO: Botón checkout desalineado en tablet
+✅ CORREGIDO: CSS responsividad ajustado
+
+... (continuar con cada cambio)
+```
+
+---
+
+## 🚀 PRÓXIMOS PASOS DESPUÉS DE AUDITORÍA
+
+1. Backup de código antes de cambios
+2. Aplicar todas las correcciones
+3. Re-auditar después de cambios
+4. Testing final con usuarios reales
+5. Deploy a producción
+6. Monitoreo en vivo (errores, analytics)
+# 👩‍💼 GUÍA PARA ADMINISTRADOR - GESTIÓN DE CONTENIDO & IMÁGENES
+
+**Para**: La dueña de Tribulaciones  
+**Propósito**: Instrucciones paso-a-paso para gestionar tienda, blog y recetas  
+**Nivel**: Principiante (sin conocimiento técnico)  
+**Tiempo**: 5 minutos por sección
+
+---
+
+## 📍 ÍNDICE
+
+1. [Acceso al Panel Admin](#acceso-al-panel-admin)
+2. [Cómo Subir Imágenes](#cómo-subir-imágenes)
+3. [Gestionar Tienda](#gestionar-tienda)
+4. [Gestionar Blog](#gestionar-blog)
+5. [Gestionar Recetas](#gestionar-recetas)
+6. [Preguntas Frecuentes](#preguntas-frecuentes)
+7. [Números de Emergencia](#números-de-emergencia)
+
+---
+
+## 🔐 ACCESO AL PANEL ADMIN
+
+### PASO 1: Abre tu navegador
+```
+Escribe en la barra de direcciones:
+https://tribulaciones.com/admin
+
+(Si tu dominio es otro, reemplaza "tribulaciones.com")
+```
+
+### PASO 2: Inicia sesión
+```
+Email: [tu email administrativo]
+Contraseña: [tu contraseña segura]
+
+💡 Si olvidaste la contraseña:
+   Haz clic en "¿Olvidaste tu contraseña?"
+```
+
+### PASO 3: Estás dentro
+```
+Verás la pantalla principal con opciones:
+├── 🛒 TIENDA
+├── 📝 BLOG
+├── 🍳 RECETAS
+└── ⚙️ CONFIGURACIÓN
+```
+
+---
+
+## 🖼️ CÓMO SUBIR IMÁGENES
+
+### MÉTODO 1: Subida desde Galería del Dispositivo
+
+**Dónde aplica**: Fotos de productos, posts, recetas  
+**Tipos de archivo**: JPG, PNG, WebP (máximo 5MB)
+
+#### Paso a paso:
+
+```
+1. Haz clic en el botón: [📁 Seleccionar imagen]
+
+2. Se abre una ventana de tu computadora con tus archivos
+
+3. Busca la carpeta donde tienes la imagen:
+   Típicamente: Descargas, Imágenes, Documentos
+
+4. Haz clic en la imagen que quieres
+
+5. Haz clic en [Abrir] o [Seleccionar]
+
+6. Verás una VISTA PREVIA:
+   ┌──────────────────┐
+   │ [Imagen aquí]    │
+   │                  │
+   │ ✏️ Editar        │
+   │ ❌ Eliminar      │
+   │ ✅ Guardar       │
+   └──────────────────┘
+
+7. Si te gusta, haz clic en [✅ Guardar]
+
+8. ¡Listo! La imagen se sube automáticamente
+```
+
+### MÉTODO 2: Subida por Arrastrar (Drag & Drop)
+
+```
+1. Abre la carpeta de tus imágenes en tu computadora
+   (lado izquierdo de la pantalla)
+
+2. Abre el panel admin en tu navegador
+   (lado derecho de la pantalla)
+
+3. Arrastra la imagen desde tu carpeta
+   hacia el área de "Subir imagen"
+
+4. Suelta el mouse
+
+5. ¡Se cargará automáticamente!
+```
+
+### RECOMENDACIONES DE IMÁGENES
+
+**TAMAÑO IDEAL**
+```
+Productos:    800px × 800px (cuadrado)
+Blog:         1200px × 600px (rectangular)
+Recetas:      1000px × 800px
+Perfil:       400px × 400px (cuadrado)
+```
+
+**PESO MÁXIMO**
+```
+Productos:    500KB
+Blog:         800KB
+Recetas:      600KB
+Perfil:       300KB
+```
+
+**FORMATOS ACEPTADOS**
+```
+✅ JPG (fotos reales)
+✅ PNG (fondo transparente)
+✅ WebP (mejor compresión)
+❌ BMP
+❌ TIF
+❌ GIF (muy pesado)
+```
+
+**HERRAMIENTA PARA COMPRIMIR IMÁGENES** (Gratuita)
+```
+https://imagecompressor.com/
+Pasos:
+1. Abre el sitio
+2. Selecciona tu imagen
+3. Descargala comprimida
+4. Sube al panel
+```
+
+---
+
+## 🛒 GESTIONAR TIENDA
+
+### A. CREAR UN NUEVO PRODUCTO
+
+**Tiempo**: 5-10 minutos por producto
+
+#### Paso 1: Accede a Tienda
+```
+[Menú izquierdo] → 🛒 TIENDA
+```
+
+#### Paso 2: Nuevo producto
+```
+Haz clic en botón: [➕ NUEVO PRODUCTO]
+```
+
+#### Paso 3: Rellena el formulario
+
+**NOMBRE DEL PRODUCTO**
+```
+Ejemplo: "Semillas de Chía Orgánicas Premium"
+✓ Sé específico
+✓ Incluye marca si aplica
+✓ Máximo 100 caracteres
+```
+
+**DESCRIPCIÓN**
+```
+Escribe qué es el producto y por qué es especial:
+
+Ejemplo:
+"Semillas de chía 100% orgánicas, sin pesticidas.
+Ricas en omega-3, fibra y proteína.
+Perfectas para smoothies, pudines y ensaladas.
+Origen: Colombia. Certificación: Orgánica Internacional."
+
+✓ Mínimo 50 caracteres
+✓ Máximo 500 caracteres
+✓ Sé honesto sobre beneficios
+✓ Menciona origen si es relevante
+```
+
+**PRECIO**
+```
+Ejemplo: 2500 (en pesos)
+✓ Solo números
+✓ Sin símbolo $
+✓ Sin puntos de separación (escribir: 2500, no 2.500)
+```
+
+**PRECIO ORIGINAL** (opcional)
+```
+Si hay descuento:
+- Precio original: 3000
+- Precio actual: 2500
+- Se muestra el descuento automáticamente: "-17%"
+```
+
+**CATEGORÍA**
+```
+Selecciona de la lista:
+□ Semillas
+□ Aceites
+□ Harinas
+□ Granos
+□ Snacks
+□ Otros
+
+Si no existe tu categoría, avísale al desarrollador.
+```
+
+**STOCK DISPONIBLE**
+```
+¿Cuántas unidades tienes?
+Ejemplo: 50
+✓ Solo números
+✓ Actualiza cuando vendas
+✓ Si llega a 0: "Agotado"
+```
+
+**BADGES** (opcional)
+```
+☐ NUEVO (si es producto nuevo)
+☐ SIN SELLOS (si no tiene conservantes)
+
+Marca los que apliquen.
+```
+
+**IMAGEN DEL PRODUCTO**
+```
+[📁 Seleccionar imagen]
+(Ver sección "Cómo subir imágenes" más arriba)
+
+✓ Que se vea apetitoso
+✓ Fondo limpio
+✓ Bien iluminado
+✓ El producto es protagonista
+```
+
+#### Paso 4: Guardar
+```
+Haz clic en [💾 GUARDAR PRODUCTO]
+
+Verás un mensaje:
+✅ "Producto creado exitosamente"
+
+¡Listo! Aparece en tu tienda al instante.
+```
+
+### B. EDITAR UN PRODUCTO
+
+```
+1. [🛒 TIENDA]
+2. Busca el producto en la lista
+3. Haz clic en [✏️ EDITAR]
+4. Cambia lo que necesites
+5. Haz clic en [💾 GUARDAR]
+```
+
+### C. CAMBIAR PRECIO
+
+```
+1. [🛒 TIENDA]
+2. Busca el producto
+3. Haz clic en [✏️ EDITAR]
+4. Cambia el campo "PRECIO"
+5. Haz clic en [💾 GUARDAR]
+
+⚡ El precio cambia al instante en la web.
+```
+
+### D. ACTUALIZAR STOCK
+
+```
+1. [🛒 TIENDA]
+2. Busca el producto
+3. Haz clic en [✏️ EDITAR]
+4. Cambia "STOCK DISPONIBLE"
+   - Ejemplo: vendiste 5 unidades de 50 → escribe 45
+5. Haz clic en [💾 GUARDAR]
+
+⚡ El indicador de stock se actualiza automáticamente.
+```
+
+### E. ELIMINAR UN PRODUCTO
+
+```
+1. [🛒 TIENDA]
+2. Busca el producto
+3. Haz clic en [🗑️ ELIMINAR]
+4. Se pide confirmación: "¿Seguro?"
+5. Haz clic en [✅ SÍ, ELIMINAR]
+
+⚠️ El producto desaparece de la tienda.
+📌 Se guarda un respaldo (contacta al desarrollador si lo necesitas recuperar).
+```
+
+---
+
+## 📝 GESTIONAR BLOG
+
+### A. CREAR UN NUEVO POST
+
+**Tiempo**: 10-15 minutos
+
+#### Paso 1: Accede a Blog
+```
+[Menú izquierdo] → 📝 BLOG
+```
+
+#### Paso 2: Nuevo post
+```
+Haz clic en: [➕ NUEVO POST]
+```
+
+#### Paso 3: Rellena el formulario
+
+**TÍTULO DEL POST**
+```
+Ejemplo: "5 Beneficios de las Semillas de Chía"
+
+✓ Atractivo y claro
+✓ Máximo 100 caracteres
+✓ Que invite a leer
+```
+
+**CATEGORÍA**
+```
+Selecciona:
+□ Salud
+□ Recetas
+□ Nutrición
+□ Historias
+□ Otros
+
+(Coordina con el desarrollador si necesitas más categorías)
+```
+
+**CONTENIDO DEL POST**
+```
+Escribe tu artículo aquí:
+
+"Las semillas de chía son un superalimento...
+Originarias de México, estas pequeñas semillas...
+Beneficios principales:
+1. Ricas en omega-3
+2. Ayudan a la digestión
+3. Aportan energía
+..."
+
+✓ Párrafos bien separados
+✓ Títulos dentro (##SUBTÍTULO)
+✓ Listas cuando sea necesario
+✓ Sin palabras juntas
+✓ Máximo 5000 caracteres
+
+EDITOR DE CONTENIDO DISPONIBLE:
+- [B] Negrita
+- [I] Cursiva
+- [⊕] Listas
+- [> ] Citas
+```
+
+**IMAGEN DESTACADA**
+```
+[📁 Seleccionar imagen]
+
+Recomendaciones:
+✓ 1200px × 600px
+✓ Que represente el tema
+✓ Texto legible si contiene
+```
+
+**PUBLICADO** (Estado)
+```
+☑ Publicado (visible en la web)
+☐ Borrador (solo tú lo ves)
+
+Por defecto: Publicado
+```
+
+#### Paso 4: Guardar
+```
+[💾 GUARDAR POST]
+
+✅ "Post creado exitosamente"
+
+¡Aparece en tu blog al instante!
+```
+
+### B. EDITAR UN POST
+
+```
+1. [📝 BLOG]
+2. Busca el post en la lista
+3. Haz clic en [✏️ EDITAR]
+4. Cambia lo que necesites
+5. Haz clic en [💾 GUARDAR]
+```
+
+### C. ELIMINAR UN POST
+
+```
+1. [📝 BLOG]
+2. Busca el post
+3. Haz clic en [🗑️ ELIMINAR]
+4. Confirma en el diálogo
+```
+
+### D. CAMBIAR ORDEN DE POSTS
+
+```
+1. [📝 BLOG]
+2. Los posts más nuevos aparecen primero
+   (Se ordena automáticamente por fecha)
+```
+
+---
+
+## 🍳 GESTIONAR RECETAS
+
+### A. CREAR UNA NUEVA RECETA
+
+**Tiempo**: 10 minutos
+
+#### Paso 1: Accede a Recetas
+```
+[Menú izquierdo] → 🍳 RECETAS
+```
+
+#### Paso 2: Nueva receta
+```
+Haz clic en: [➕ NUEVA RECETA]
+```
+
+#### Paso 3: Rellena el formulario
+
+**NOMBRE DE LA RECETA**
+```
+Ejemplo: "Pudín de Chía con Coco"
+
+✓ Claro y apetitoso
+✓ Máximo 100 caracteres
+```
+
+**DESCRIPCIÓN**
+```
+Qué es esta receta en 1-2 líneas:
+
+Ejemplo: "Un pudín cremoso y saludable, perfecto
+para desayunar o como snack. Sin cocción."
+
+✓ Brevísimo
+✓ Máximo 200 caracteres
+```
+
+**DIFICULTAD**
+```
+Selecciona una:
+□ Fácil
+□ Medio
+□ Difícil
+
+(Mayoría debería ser "Fácil" o "Medio")
+```
+
+**CATEGORÍA**
+```
+Selecciona:
+□ Desayuno
+□ Almuerzo
+□ Cena
+□ Snacks
+□ Postres
+□ Bebidas
+```
+
+**INGREDIENTES**
+```
+Haz clic en [➕ Agregar ingrediente]
+
+Rellena:
+- Nombre: "Semillas de chía"
+- Cantidad: "100"
+- Unidad: "gramos"
+
+Repite para cada ingrediente.
+
+FORMATO:
+"100 gramos de semillas de chía"
+"1 taza de leche de coco"
+"2 cucharadas de miel"
+...
+
+✓ Sé específico con cantidades
+✓ Incluye unidad (gramos, cucharadas, tazas)
+```
+
+**PASOS DE PREPARACIÓN**
+```
+Haz clic en [➕ Agregar paso]
+
+PASO 1:
+"Mezcla las semillas de chía con la leche
+de coco en un recipiente"
+
+PASO 2:
+"Revuelve bien y deja reposar 5 minutos"
+
+...
+
+✓ Pasos claros y concisos
+✓ Numerados automáticamente
+✓ Máximo 10 pasos
+```
+
+**TIEMPO DE PREPARACIÓN** (opcional)
+```
+Ejemplo: "15 minutos"
+(O "Ninguno" si es sin cocción)
+```
+
+**IMAGEN DE LA RECETA**
+```
+[📁 Seleccionar imagen]
+
+Recomendaciones:
+✓ Foto del plato terminado
+✓ Bien iluminado
+✓ Que se vea apetitoso
+✓ 1000px × 800px
+```
+
+#### Paso 4: Guardar
+```
+[💾 GUARDAR RECETA]
+
+✅ "Receta creada exitosamente"
+```
+
+### B. EDITAR UNA RECETA
+
+```
+1. [🍳 RECETAS]
+2. Busca la receta
+3. Haz clic en [✏️ EDITAR]
+4. Cambia lo que necesites
+5. Haz clic en [💾 GUARDAR]
+```
+
+---
+
+## ❓ PREGUNTAS FRECUENTES
+
+### P: ¿Cuántos productos puedo agregar?
+**R:** Ilimitados. Agrega todos los que necesites. La página se optimiza automáticamente.
+
+### P: ¿Se ven los cambios inmediatamente?
+**R:** Sí. Al hacer clic en "Guardar", la web se actualiza automáticamente. Pueden pasar 5-10 segundos en verse reflejados.
+
+### P: ¿Puedo cambiar precios en tiempo real?
+**R:** Sí. Edita el producto y cambia el precio. Se actualiza al instante.
+
+### P: ¿Qué pasa si subo una imagen de mala calidad?
+**R:** Se aceptará pero se verá pixelada. Recomendamos comprimir antes: https://imagecompressor.com/
+
+### P: ¿Qué tamaño de imagen es mejor?
+**R:** 
+- Productos: 800×800px
+- Blog: 1200×600px
+- Recetas: 1000×800px
+
+### P: ¿Puedo eliminar un producto y recuperarlo?
+**R:** Sí, pero avísale al desarrollador. Se guardan respaldos.
+
+### P: ¿Hay limite de posts en el blog?
+**R:** No. Puedes escribir todos los que quieras.
+
+### P: ¿Los cambios se guardan automáticamente?
+**R:** No. Debes hacer clic en "Guardar" explícitamente. Si olvidas, se pierden los cambios.
+
+### P: ¿Puedo cambiar la contraseña?
+**R:** Sí. Ve a Configuración → Cambiar contraseña.
+
+### P: ¿Mi contraseña es segura?
+**R:** Sí. Se encripta en la base de datos. Nadie (ni el desarrollador) puede verla.
+
+### P: ¿Qué pasa si escribo mal?
+**R:** Puedes editar después. No hay problema. Haz clic en Editar → Cambias el texto → Guardas.
+
+### P: ¿Puedo tener varios administradores?
+**R:** Sí. Contacta al desarrollador para agregar más cuentas admin.
+
+### P: ¿Hay respaldo de mis datos?
+**R:** Sí. El servidor hace respaldos automáticos diarios. Pero es bueno que tengas copias locales también.
+
+### P: ¿Qué pasa si la web se cae?
+**R:** Contacta al desarrollador. No es tu culpa. Él lo arreglará.
+
+---
+
+## 📞 NÚMEROS DE EMERGENCIA
+
+### Si algo no funciona:
+
+**CONTACTO PRINCIPAL**
+```
+Nombre: [Nombre Desarrollador]
+Email: [email]
+Teléfono: [teléfono]
+WhatsApp: [número]
+```
+
+**PROBLEMAS COMUNES**
+
+1. **No puedo entrar al panel**
+   - Verifica email y contraseña
+   - Borra cookies del navegador (Settings → Clear browsing data)
+   - Abre en modo incógnito
+   - Si persiste: Contacta al desarrollador
+
+2. **La imagen no sube**
+   - Verifica que pese menos de 5MB
+   - Comprime en: https://imagecompressor.com/
+   - Intenta otro formato (JPG en lugar de PNG)
+   - Si persiste: Contacta al desarrollador
+
+3. **Un producto no aparece en la web**
+   - Verifica que esté marcado como "Publicado"
+   - Espera 30 segundos
+   - Recarga la web (F5)
+   - Si persiste: Contacta al desarrollador
+
+4. **Olvidé la contraseña**
+   - Haz clic en "¿Olvidaste tu contraseña?"
+   - Sigue los pasos en tu email
+   - Si no llegarle email: Contacta al desarrollador
+
+---
+
+## 📚 RECURSOS ÚTILES
+
+- **Comprimir imágenes**: https://imagecompressor.com/
+- **Resize imágenes**: https://pixlr.com/
+- **Corrector ortográfico**: https://www.grammarly.com/
+- **Generador de títulos**: https://headlines.sharethrough.com/
+
+---
+
+## ✅ CHECKLIST: ANTES DE SUBIR CONTENIDO
+
+```
+□ Imagen optimizada (tamaño correcto)
+□ Texto sin errores ortográficos
+□ Descripción completa
+□ Precio correcto (sin puntos/comas)
+□ Stock actualizado
+□ Categoría seleccionada
+□ Todo revisado
+
+✅ ¡Listo para publicar!
+```
+
+---
+
+## 📝 TEMPLATE: NUEVO PRODUCTO
+
+Guarda esto como referencia:
+
+```
+NOMBRE: ____________________________________
+DESCRIPCIÓN: _______________________________
+____________________________________________
+
+PRECIO: $ ____________
+PRECIO ORIGINAL: $ ____________ (si hay descuento)
+
+CATEGORÍA: __________________________________
+
+STOCK: ______________
+
+BADGES:
+□ NUEVO
+□ SIN SELLOS
+
+IMAGEN: [adjuntar]
+```
+
+---
+
+## 🎓 CONSEJOS FINALES
+
+✨ **LA CALIDAD IMPORTA**
+- Imágenes claras y bien iluminadas
+- Descripciones completas y honestas
+- Precios correctos
+- Stock actualizado
+
+✨ **ACTUALIZA REGULARMENTE**
+- Nueva producto cada semana es ideal
+- Blog posts cada 2 semanas
+- Revisa stock diariamente
+
+✨ **SÉ CONSISTENTE**
+- Mismos estilos de fotos
+- Descripciones con formato similar
+- Categorías bien organizadas
+
+✨ **PIDE AYUDA**
+- No dudes en contactar al desarrollador
+- Es mejor preguntar que dejar la web incompleta
+
+---
+
+**¡Ahora tienes tod

@@ -15,6 +15,16 @@ import { Link } from "wouter";
 
 const PROVINCIAS = ["Capital Federal", "Buenos Aires GBA", "Buenos Aires Interior", "Córdoba", "Santa Fe", "Mendoza", "Resto del país"];
 
+const ENVIO_BASE: Record<string, number> = {
+  "Capital Federal": 0,
+  "Buenos Aires GBA": 700,
+  "Buenos Aires Interior": 1000,
+  "Córdoba": 1200,
+  "Santa Fe": 1200,
+  "Mendoza": 1400,
+  "Resto del país": 1800,
+};
+
 const step1Schema = z.object({
   nombre: z.string().min(2, "Nombre requerido"),
   apellido: z.string().min(2, "Apellido requerido"),
@@ -48,7 +58,8 @@ export default function Checkout() {
   const activeItems = cartItems.filter((i) => !i.savedForLater);
 
   const discount = appliedCoupon ? cartTotal * appliedCoupon.discount : 0;
-  const shipCost = shipMethod === "retiro" ? 0 : shipMethod === "express" ? 1800 : 700;
+  const baseShip = shippingData ? (ENVIO_BASE[shippingData.provincia] ?? 1800) : 700;
+  const shipCost = shipMethod === "retiro" ? 0 : shipMethod === "express" ? Math.round(baseShip * 1.6) : baseShip;
   const total = cartTotal - discount + shipCost;
 
   const form1 = useForm<Step1Values>({ resolver: zodResolver(step1Schema) });
@@ -56,8 +67,7 @@ export default function Checkout() {
 
   const onStep1 = (data: Step1Values) => { setShippingData(data); setStep(2); };
   const onStep2 = () => setStep(3);
-  const onStep3 = (data: Step3Values) => {
-    console.log("Payment:", data);
+  const onStep3 = (_data: Step3Values) => {
     setLoading(true);
     setTimeout(() => {
       const orderId = addOrder({

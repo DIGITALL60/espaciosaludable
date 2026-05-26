@@ -52,7 +52,7 @@ export function CompareModal({ open, onClose }: CompareModalProps) {
                   <td className="py-3 pr-4 text-muted-foreground font-medium">{label}</td>
                   {products.map((p) => p && (
                     <td key={p.id} className="py-3 px-4 text-center font-medium">
-                      {format((p as Record<string, unknown>)[key])}
+                      {format((p as unknown as Record<string, unknown>)[key])}
                     </td>
                   ))}
                 </tr>

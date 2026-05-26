@@ -4,7 +4,7 @@ import gsap from "gsap";
 export function useCursorTrail() {
   useEffect(() => {
     // Only run on desktop and if user hasn't requested reduced motion
-    const prefersReducedMotion = window.matchMatchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     const isMobile = window.innerWidth < 768;
     
     if (prefersReducedMotion || isMobile) return;

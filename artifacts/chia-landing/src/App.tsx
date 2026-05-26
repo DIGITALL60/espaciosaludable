@@ -23,6 +23,11 @@ const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Account = lazy(() => import("@/pages/Account"));
 const Wishlist = lazy(() => import("@/pages/Wishlist"));
+const FAQ = lazy(() => import("@/pages/FAQ"));
+const Envios = lazy(() => import("@/pages/Envios"));
+const Pagos = lazy(() => import("@/pages/Pagos"));
+const Terminos = lazy(() => import("@/pages/Terminos"));
+const Privacidad = lazy(() => import("@/pages/Privacidad"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 // Admin pages
@@ -63,6 +68,11 @@ function Router() {
         <Route path="/contacto" component={Contact} />
         <Route path="/cuenta" component={Account} />
         <Route path="/favoritos" component={Wishlist} />
+        <Route path="/faq" component={FAQ} />
+        <Route path="/envios" component={Envios} />
+        <Route path="/pagos" component={Pagos} />
+        <Route path="/terminos" component={Terminos} />
+        <Route path="/privacidad" component={Privacidad} />
         <Route path="/admin" component={AdminDashboard} />
         <Route path="/admin/productos" component={AdminProducts} />
         <Route path="/admin/blog" component={AdminBlog} />

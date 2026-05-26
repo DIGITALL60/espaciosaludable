@@ -24,8 +24,7 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const form = useForm<FormValues>({ resolver: zodResolver(schema), defaultValues: { nombre: "", email: "", asunto: "", mensaje: "" } });
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Contact form:", data);
+  const onSubmit = (_data: FormValues) => {
     setTimeout(() => {
       setSent(true);
       toast.success("¡Mensaje enviado! Te responderemos pronto.");

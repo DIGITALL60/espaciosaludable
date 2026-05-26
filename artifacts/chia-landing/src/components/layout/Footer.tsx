@@ -18,13 +18,13 @@ export function Footer() {
               Alimentos reales, sin culpas y pensados para tu bienestar. Tu día rico en proteínas.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://www.instagram.com/chiaespacio" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://www.facebook.com/chiaespacio" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://www.twitter.com/chiaespacio" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors">
                 <Twitter size={20} />
               </a>
             </div>
