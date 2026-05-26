@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { User, Package, Truck, Heart, Bell, Eye, EyeOff, CheckCircle2, Download, LayoutDashboard } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { toast } from "sonner";
 
 // Password strength helper
@@ -343,8 +343,15 @@ function Dashboard() {
 
 export default function Account() {
   const { user } = useApp();
+  const [, setLocation] = useLocation();
   const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const defaultTab = params.get("tab") ?? undefined;
+
+  useEffect(() => {
+    if (user?.isAdmin) {
+      setLocation("/admin");
+    }
+  }, [user, setLocation]);
 
   return (
     <PageLayout title="Mi Cuenta">
