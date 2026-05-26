@@ -209,7 +209,7 @@ export function Hero() {
 
           {/* ── Right: video ───────────────────────────────────────── */}
           <div className="relative lg:ml-auto">
-            <div ref={videoRef} className="relative w-full max-w-md mx-auto opacity-0">
+            <div ref={videoRef} className="relative w-full max-w-xs mx-auto opacity-0">
               <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/30 bg-black aspect-[9/16]">
                 <video
                   src="/chia-reel.mp4"
