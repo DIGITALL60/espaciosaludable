@@ -1,9 +1,34 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Shield, Leaf, Heart } from "lucide-react";
 
-const TITLE_WORDS = ["Tu", "día", "rico", "en", "proteínas", "♡"];
+const FULL_TITLE = "Tu día rico en proteínas ♡";
+
+function useTypewriter(text: string, speed = 55) {
+  const [displayed, setDisplayed] = useState("");
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    setDisplayed("");
+    setDone(false);
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayed(text.slice(0, i));
+      if (i >= text.length) {
+        clearInterval(interval);
+        setDone(true);
+      }
+    }, speed);
+    return () => clearInterval(interval);
+  }, [text, speed]);
+
+  return { displayed, done };
+}
 
 export function Hero() {
+  const { displayed, done } = useTypewriter(FULL_TITLE, 55);
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden min-h-[90vh] flex items-center animate-fade-in">
       {/* Background Elements */}
@@ -20,13 +45,13 @@ export function Hero() {
               NUEVA FÓRMULA MEJORADA
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6">
-              {TITLE_WORDS.map((word, i) => (
-                <span key={i}>
-                  {word}
-                  {i < TITLE_WORDS.length - 1 && "\u00A0"}
-                </span>
-              ))}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6 min-h-[1.2em]">
+              {displayed}
+              <span
+                className={`inline-block w-[3px] h-[0.85em] bg-primary align-middle ml-1 ${
+                  done ? "animate-blink" : "opacity-100"
+                }`}
+              />
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
