@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "CHÍA - Espacio Saludable"
+version = "1.0.0"
+id = "artifacts/chia-landing"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24947
+
+[services.development]
+run = "pnpm --filter @workspace/chia-landing run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/chia-landing", "run", "build" ]
+publicDir = "artifacts/chia-landing/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24947"
+BASE_PATH = "/"
