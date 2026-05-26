@@ -94,41 +94,18 @@ export function Hero() {
 
           {/* Video */}
           <div className="relative lg:ml-auto">
-            <div className="relative w-full max-w-sm mx-auto">
-              {/* Decorative circle behind video */}
-              <div className="absolute inset-0 bg-secondary/30 rounded-3xl scale-105 -z-10 blur-xl" />
-
-              <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 bg-black aspect-[9/16]">
+            <div className="relative w-full max-w-md mx-auto">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/30 bg-black aspect-[9/16]">
                 <iframe
-                  src="https://www.instagram.com/reel/DW1851fEbOh/embed/"
+                  src="https://www.instagram.com/reel/DW1851fEbOh/embed/captioned/?autoplay=1&muted=1"
                   className="w-full h-full"
                   frameBorder="0"
                   scrolling="no"
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                   allowFullScreen
+                  style={{ minHeight: "600px" }}
                 />
               </div>
-
-              {/* Floating badges */}
-              <div className="hero-element absolute -right-4 top-1/4 bg-background p-4 rounded-xl shadow-xl border border-border/50 z-20 hidden md:block">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-primary font-bold">
-                    +P
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-foreground">+25g Proteína</div>
-                    <div className="text-xs text-muted-foreground">Por porción</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hero-element absolute -left-8 bottom-1/4 bg-background p-4 rounded-xl shadow-xl border border-border/50 z-20 hidden md:block">
-                <div className="flex items-center gap-3">
-                  <div className="text-yellow-500">★★★★★</div>
-                  <div className="text-sm font-bold text-foreground">10k+ Clientes</div>
-                </div>
-              </div>
-
             </div>
           </div>
 
