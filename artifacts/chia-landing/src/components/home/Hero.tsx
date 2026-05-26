@@ -7,10 +7,9 @@ import { CheckCircle2, Shield, Leaf, Heart } from "lucide-react";
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
 
   useGSAP(() => {
-    if (!containerRef.current || !titleRef.current || !imageRef.current) return;
+    if (!containerRef.current || !titleRef.current) return;
 
     // Title staggered animation
     const words = titleRef.current.innerText.split(" ");
@@ -36,15 +35,6 @@ export function Hero() {
       { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" },
       "-=0.4"
     );
-
-    // Image float animation
-    gsap.to(imageRef.current, {
-      y: -15,
-      duration: 2.5,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
 
   }, { scope: containerRef });
 
@@ -102,18 +92,22 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Image */}
+          {/* Video */}
           <div className="relative lg:ml-auto">
-            <div className="relative w-full max-w-lg aspect-square mx-auto">
-              {/* Decorative circle behind image */}
-              <div className="absolute inset-0 bg-secondary/30 rounded-full scale-90 -z-10 transform -translate-y-8" />
-              
-              <img 
-                ref={imageRef}
-                src="/images/nut-butter.png" 
-                alt="TRIBA Pasta de Maní" 
-                className="w-full h-full object-cover object-center rounded-2xl shadow-2xl z-10 relative border-4 border-white/50"
-              />
+            <div className="relative w-full max-w-sm mx-auto">
+              {/* Decorative circle behind video */}
+              <div className="absolute inset-0 bg-secondary/30 rounded-3xl scale-105 -z-10 blur-xl" />
+
+              <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 bg-black aspect-[9/16]">
+                <iframe
+                  src="https://www.instagram.com/reel/DW1851fEbOh/embed/"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  scrolling="no"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
 
               {/* Floating badges */}
               <div className="hero-element absolute -right-4 top-1/4 bg-background p-4 rounded-xl shadow-xl border border-border/50 z-20 hidden md:block">
