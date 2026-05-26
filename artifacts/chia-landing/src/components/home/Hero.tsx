@@ -12,7 +12,7 @@ export function Hero() {
   useGSAP(() => {
     if (!containerRef.current) return;
 
-    const tl = gsap.timeline({ delay: 1.5 });
+    const tl = gsap.timeline({ delay: 0 });
 
     tl.fromTo(".title-word",
       { opacity: 0, y: 40 },
