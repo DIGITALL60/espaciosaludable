@@ -92,14 +92,13 @@ export function Hero() {
           <div className="relative lg:ml-auto">
             <div className="relative w-full max-w-md mx-auto">
               <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/30 bg-black aspect-[9/16]">
-                <iframe
-                  src="https://www.instagram.com/reel/DW1851fEbOh/embed/captioned/?autoplay=1&muted=1"
-                  className="w-full h-full"
-                  frameBorder="0"
-                  scrolling="no"
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen
-                  style={{ minHeight: "600px" }}
+                <video
+                  src="/chia-reel.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </div>
             </div>
