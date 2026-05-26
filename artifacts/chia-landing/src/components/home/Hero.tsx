@@ -37,14 +37,14 @@ function useTypewriter(text: string, speed = 55, startDelay = 400) {
 export function Hero() {
   const { displayed, done } = useTypewriter(FULL_TITLE, 55, 300);
 
-  const sectionRef  = useRef<HTMLElement>(null);
-  const badgeRef    = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const buttonsRef  = useRef<HTMLDivElement>(null);
-  const videoRef    = useRef<HTMLDivElement>(null);
-  const trustRef    = useRef<HTMLDivElement>(null);
-  const btn1Ref     = useRef<HTMLButtonElement>(null);
-  const btn2Ref     = useRef<HTMLButtonElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLDivElement>(null);
+  const trustRef = useRef<HTMLDivElement>(null);
+  const btn1Ref = useRef<HTMLButtonElement>(null);
+  const btn2Ref = useRef<HTMLButtonElement>(null);
 
   // ── Entrance animations ──────────────────────────────────────────
   useGSAP(() => {
@@ -57,24 +57,24 @@ export function Hero() {
       { opacity: 0, y: -24 },
       { opacity: 1, y: 0, duration: 0.5 }
     )
-    // Subtitle from below (after ~title starts typing)
-    .fromTo(subtitleRef.current,
-      { opacity: 0, y: 28 },
-      { opacity: 1, y: 0, duration: 0.6 },
-      "+=0.8"
-    )
-    // Buttons stagger
-    .fromTo(buttonsRef.current!.children,
-      { opacity: 0, y: 24 },
-      { opacity: 1, y: 0, duration: 0.5, stagger: 0.12 },
-      "-=0.2"
-    )
-    // Trust icons stagger
-    .fromTo(trustRef.current!.children,
-      { opacity: 0, y: 16 },
-      { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 },
-      "-=0.2"
-    );
+      // Subtitle from below (after ~title starts typing)
+      .fromTo(subtitleRef.current,
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        "+=0.8"
+      )
+      // Buttons stagger
+      .fromTo(buttonsRef.current!.children,
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.12 },
+        "-=0.2"
+      )
+      // Trust icons stagger
+      .fromTo(trustRef.current!.children,
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 },
+        "-=0.2"
+      );
 
     // Video zoom in
     gsap.fromTo(videoRef.current,
@@ -110,10 +110,10 @@ export function Hero() {
   }, { scope: sectionRef });
 
   // ── Button hover with GSAP ────────────────────────────────────────
-  const hoverIn  = (ref: React.RefObject<HTMLButtonElement | null>) =>
+  const hoverIn = (ref: React.RefObject<HTMLButtonElement | null>) =>
     () => gsap.to(ref.current, { scale: 1.05, duration: 0.2, ease: "power2.out" });
   const hoverOut = (ref: React.RefObject<HTMLButtonElement | null>) =>
-    () => gsap.to(ref.current, { scale: 1,    duration: 0.2, ease: "power2.out" });
+    () => gsap.to(ref.current, { scale: 1, duration: 0.2, ease: "power2.out" });
 
   return (
     <section
@@ -136,16 +136,15 @@ export function Hero() {
               className="opacity-0 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-primary font-medium text-sm mb-6 border border-secondary/30"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              NUEVA FÓRMULA MEJORADA
+              NUEVAS FÓRMULAS MEJORADA
             </div>
 
             {/* Title — typewriter */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6 min-h-[1.2em]">
               {displayed}
               <span
-                className={`inline-block w-[3px] h-[0.85em] bg-primary align-middle ml-1 ${
-                  done ? "animate-blink" : "opacity-100"
-                }`}
+                className={`inline-block w-[3px] h-[0.85em] bg-primary align-middle ml-1 ${done ? "animate-blink" : "opacity-100"
+                  }`}
               />
             </h1>
 
@@ -187,10 +186,10 @@ export function Hero() {
               className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-border/50"
             >
               {[
-                { icon: Leaf,         text: "Ingredientes naturales" },
-                { icon: Shield,       text: "Sin azúcar agregada"   },
-                { icon: CheckCircle2, text: "Vegano y sin TACC"     },
-                { icon: Heart,        text: "Atención personalizada"},
+                { icon: Leaf, text: "Ingredientes naturales" },
+                { icon: Shield, text: "Sin azúcar agregada" },
+                { icon: CheckCircle2, text: "Vegano y sin TACC" },
+                { icon: Heart, text: "Atención personalizada" },
               ].map((item, idx) => (
                 <div
                   key={idx}

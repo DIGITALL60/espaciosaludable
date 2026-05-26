@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
 import { Categories } from "@/components/home/Categories";
 import { Recipes } from "@/components/home/Recipes";
-import { Testimonials } from "@/components/home/Testimonials";
+
 import { Stats } from "@/components/home/Stats";
 import { Social } from "@/components/home/Social";
 import { Preloader } from "@/components/Preloader";
@@ -27,7 +27,7 @@ export default function Home() {
             <Categories />
             <Recipes />
             <Stats />
-            <Testimonials />
+
             <Social />
           </main>
           <Footer />

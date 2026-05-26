@@ -28,6 +28,8 @@ const Envios = lazy(() => import("@/pages/Envios"));
 const Pagos = lazy(() => import("@/pages/Pagos"));
 const Terminos = lazy(() => import("@/pages/Terminos"));
 const Privacidad = lazy(() => import("@/pages/Privacidad"));
+const SignIn = lazy(() => import("@/pages/SignIn"));
+const SignUp = lazy(() => import("@/pages/SignUp"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 // Admin pages
@@ -73,6 +75,8 @@ function Router() {
         <Route path="/pagos" component={Pagos} />
         <Route path="/terminos" component={Terminos} />
         <Route path="/privacidad" component={Privacidad} />
+        <Route path="/sign-in" component={SignIn} />
+        <Route path="/sign-up" component={SignUp} />
         <Route path="/admin" component={AdminDashboard} />
         <Route path="/admin/productos" component={AdminProducts} />
         <Route path="/admin/blog" component={AdminBlog} />
