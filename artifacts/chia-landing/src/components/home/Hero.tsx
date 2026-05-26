@@ -4,19 +4,19 @@ import { useGSAP } from "@gsap/react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Shield, Leaf, Heart } from "lucide-react";
 
+const TITLE_WORDS = ["Tu", "día", "rico", "en", "proteínas", "♡"];
+
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useGSAP(() => {
-    if (!containerRef.current || !titleRef.current) return;
+    if (!containerRef.current) return;
 
     const tl = gsap.timeline({ delay: 1.5 });
 
-    tl.fromTo(
-      titleRef.current,
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
+    tl.fromTo(".title-word",
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: "power3.out" }
     )
     .fromTo(".hero-element",
       { opacity: 0, y: 16 },
@@ -42,8 +42,13 @@ export function Hero() {
               NUEVA FÓRMULA MEJORADA
             </div>
             
-            <h1 ref={titleRef} className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6">
-              Tu día rico en proteínas ♡
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6">
+              {TITLE_WORDS.map((word, i) => (
+                <span key={i} className="title-word inline-block opacity-0">
+                  {word}
+                  {i < TITLE_WORDS.length - 1 && "\u00A0"}
+                </span>
+              ))}
             </h1>
             
             <p className="hero-element text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
